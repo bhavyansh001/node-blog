@@ -38,3 +38,9 @@ curl -X PUT http://localhost:3000/api/blogs/1 -H "Content-Type: application/json
 
 curl -X DELETE http://localhost:3000/api/blogs/1
 
+---
+
+npm i ejs
+
+
+views/
