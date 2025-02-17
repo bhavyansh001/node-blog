@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>My Blog</h1>
+    <a href="/new">Create New Post</a>
+    
+    <% if (blogs.length > 0) { %>
+        <ul>
+            <% blogs.forEach(blog => { %>
+                <li>
+                    <h2><a href="/blogs/<%= blog.id %>"><%= blog.title %></a></h2>
+                    <p><%= blog.body.substring(0, 100) %>...</p>
+                    <a href="/blogs/<%= blog.id %>">Read More</a> |
+                    <a href="/blogs/<%= blog.id %>/edit">Edit</a> |
+                    <a href="/blogs/<%= blog.id %>/delete">Delete</a>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>No blogs available.</p>
+    <% } %>
+</body>
+</html>
