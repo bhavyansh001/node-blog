@@ -44,3 +44,38 @@ npm i ejs
 
 
 views/
+
+---
+
+Adding Comments
+
+config/database.js
+
+commentModel.js
+
+commentController.js
+
+Routes
+
+app.js
+
+views
+
+
+curl -X GET http://localhost:3000/api/comments/blog/1
+
+curl -X POST \
+  http://localhost:3000/api/comments/blog/1 \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "content": "This is a test comment via curl!"
+  }'
+
+curl -X PUT \
+  http://localhost:3000/api/comments/1 \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "content": "This comment has been updated via curl!"
+  }'
+
+curl -X DELETE http://localhost:3000/api/comments/1

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Comment</title>
+</head>
+<body>
+    <h1>Edit Comment</h1>
+    <form action="/comments/<%= comment.id %>" method="POST">
+        <input type="hidden" name="blogId" value="<%= comment.blog_id %>">
+        <label for="content">Comment:</label>
+        <textarea id="content" name="content" required><%= comment.content %></textarea>
+        <br>
+        <button type="submit">Update Comment</button>
+    </form>
+    <br>
+    <a href="/blogs/<%= comment.blog_id %>">Back to Blog</a>
+    <a href="/">Back to Home</a>
+</body>
+</html>

@@ -21,7 +21,13 @@ async function initializeDatabase() {
           id SERIAL PRIMARY KEY,
           title VARCHAR(255) NOT NULL,
           body TEXT NOT NULL
-        )
+        );
+
+        CREATE TABLE IF NOT EXISTS comments (
+        id SERIAL PRIMARY KEY,
+        blog_id INTEGER REFERENCES blogs(id) ON DELETE CASCADE,
+        content TEXT NOT NULL
+      );
       `);
     console.log("Database initialized successfully");
   } catch (err) {
